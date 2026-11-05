@@ -58,11 +58,11 @@ Pure logic is in `src/lib/helpers.ts`; `src/App.test.tsx` covers rendering, recr
 
 `npm run build` outputs a static site in `dist/`.
 
-**GitHub Pages (free, no expiry):** `.github/workflows/deploy.yml` runs the tests, builds, and publishes `dist/` on every push to `main`.
+**GitHub Pages (free, no expiry):** the source lives on the `source` branch. `.github/workflows/publish.yml` runs the tests, builds, and force-publishes `dist/` to the `main` branch on every push to `source`.
 
 1. Create a **public** repo named `<username>.github.io` (served at `https://<username>.github.io/`, no `base` change needed).
-2. Push this project to its `main` branch.
-3. In the repo, go to Settings → Pages → Source and choose **GitHub Actions**.
+2. Do all work on `source` and `git push` it. `main` only ever contains the built site, so never edit it by hand.
+3. In the repo, Settings → Pages → Source must be **Deploy from a branch**, branch `main`, folder `/ (root)`. Don't switch it to "GitHub Actions": this workflow doesn't use that mode.
 
 For a repo with any other name, set `base: "/<repo>/"` in `vite.config.ts`. Netlify, Vercel and Cloudflare Pages also work.
 
