@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, Check } from "lucide-react";
 import { aiConfessionLines, availability, lookingFor, profile } from "../data/profile";
+import { VisitorCounter } from "./VisitorCounter";
 import { getContacts } from "../lib/contacts";
 import { isPlaceholder } from "../lib/helpers";
 import { ContactCard } from "./ContactLinks";
@@ -95,6 +96,7 @@ export function Contact() {
         </span>
         <span className="block">{aiConfessionLines[0]}</span>
         <span className="block">{aiConfessionLines[1]}</span>
+        <VisitorCounter />
       </p>
     </section>
   );

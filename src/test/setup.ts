@@ -25,5 +25,7 @@ Object.defineProperty(window, "matchMedia", {
 });
 
 window.scrollTo = () => {};
+// Tests must never reach the network (visitor counter etc.); individual tests override this.
+globalThis.fetch = vi.fn().mockRejectedValue(new Error("network disabled in tests"));
 // Skip the boot intro in tests; Boot has its own dedicated tests.
 sessionStorage.setItem("booted", "1");

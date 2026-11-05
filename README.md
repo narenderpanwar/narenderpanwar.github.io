@@ -66,6 +66,10 @@ Pure logic is in `src/lib/helpers.ts`; `src/App.test.tsx` covers rendering, recr
 
 For a repo with any other name, set `base: "/<repo>/"` in `vite.config.ts`. Netlify, Vercel and Cloudflare Pages also work.
 
+## Visitor counter
+
+The footer shows total visits using the free [Abacus](https://abacus.jasoncameron.dev) counter API (no account or key). `src/lib/visitors.ts` counts each browser once (a `visit-counted` flag in localStorage), never counts `localhost` previews, and hides the line if the service is unreachable. To change or reset the counter, edit `COUNTER_PATH` in that file. Tests stub `fetch`, so they never hit the network.
+
 ## Google search (SEO)
 
 `index.html` carries the canonical URL, Open Graph tags and `Person` JSON-LD; `public/robots.txt` and `public/sitemap.xml` are served from the site root. To get indexed, verify the site in [Google Search Console](https://search.google.com/search-console) (URL-prefix property `https://narenderpanwar.github.io/`), submit `sitemap.xml`, and use URL Inspection → Request indexing. If the site URL changes, update it in those three files.
