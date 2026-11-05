@@ -94,7 +94,6 @@ export function Contact() {
           © {new Date().getFullYear()} {profile.name} · Built with React, Tailwind &amp; a green pipeline ✅
         </span>
         <span className="block">{aiConfessionLines[0]}</span>
-        <span className="block">{aiConfessionLines[1]}</span>
       </p>
     </section>
   );

@@ -123,24 +123,23 @@ describe("App", () => {
     expect(writeText).toHaveBeenCalledWith(profile.email);
   });
 
-  it("shows the footer as three centred lines: copyright + stack, the AI confession, then the sign-off", () => {
+  it("shows the footer as two centred lines: copyright + stack, then the AI confession", () => {
     render(<App />);
     const norm = (el: HTMLElement) => el.textContent?.replace(/\s+/g, " ").trim();
 
     const line1 = screen.getByText(/Built with React, Tailwind/);
     const line2 = screen.getByText(/All prompted into existence/);
-    const line3 = screen.getByText("No cap. :D");
 
     expect(norm(line1)).toBe(`© ${new Date().getFullYear()} ${profile.name} · Built with React, Tailwind & a green pipeline ✅`);
     expect(norm(line2)).toBe("All prompted into existence by AI in a few minutes and took the credit.");
-    expect(norm(line3)).toBe("No cap. :D");
-    expect(aiConfessionLines).toEqual(["All prompted into existence by AI in a few minutes and took the credit.", "No cap. :D"]);
+    expect(aiConfessionLines).toEqual(["All prompted into existence by AI in a few minutes and took the credit."]);
+    expect(screen.queryByText(/No cap/)).not.toBeInTheDocument();
 
     // each is its own block line, inside one centred paragraph, in order
     const para = line1.parentElement as HTMLElement;
     expect(para).toHaveClass("text-center");
-    expect([...para.children]).toEqual([line1, line2, line3]);
-    for (const l of [line1, line2, line3]) expect(l).toHaveClass("block");
+    expect([...para.children]).toEqual([line1, line2]);
+    for (const l of [line1, line2]) expect(l).toHaveClass("block");
   });
 
   it("has no Save contact card or downloadable contact file", () => {

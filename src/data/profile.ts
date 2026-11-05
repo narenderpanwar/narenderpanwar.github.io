@@ -254,7 +254,7 @@ export const credentials: { certifications: Certification[] } = {
 
 // TODO: tune to what you actually want.
 // Footer lines 2 and 3 (line 1 is the copyright + stack). Keep it short.
-export const aiConfessionLines = ["All prompted into existence by AI in a few minutes and took the credit.", "No cap. :D"] as const;
+export const aiConfessionLines = ["All prompted into existence by AI in a few minutes and took the credit."] as const;
 
 export const lookingFor: string[] = [
   "DevOps, Platform or SRE roles",
