@@ -66,7 +66,7 @@ export function Navbar() {
           <ResumeLink label="Resume" className="hidden rounded-lg border border-line px-3 py-1.5 text-sm hover:border-ok hover:text-ok sm:inline-flex" />
           <Magnetic strength={0.2} className="hidden sm:inline-block">
             <a href="#contact" className="shine inline-block rounded-lg bg-ok px-3.5 py-1.5 font-mono text-sm font-bold text-ink">
-              Hire me
+              Let's talk
             </a>
           </Magnetic>
           <button
@@ -88,7 +88,7 @@ export function Navbar() {
             exit={{ opacity: 0, y: -10, scale: 0.97 }}
             className="panel mt-2 flex flex-col gap-1 rounded-xl p-2 lg:hidden"
           >
-            {[...navLinks, { href: "#contact", label: "Hire me" }].map((l, i) => (
+            {[...navLinks, { href: "#contact", label: "Let's talk" }].map((l, i) => (
               <motion.li key={l.label} initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.04 }}>
                 <a
                   href={l.href}

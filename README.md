@@ -19,7 +19,7 @@ A DevOps-themed, recruiter-friendly portfolio for a DevOps Engineer. Built with 
 ## Recruiter-friendly features
 
 - Above the fold: name, role, **Open to work** badge, location, and a TL;DR card (experience, work mode, notice period, looking for, core stack).
-- Sticky **Hire me** and **Resume** buttons.
+- Sticky **Let's talk** and **Resume** buttons.
 - Case studies in *Problem / What I did / Result* format, and a deliberately humble, tongue-in-cheek skills tier list (C+ / D / F) that ranks how often each tool is used.
 - Verified certification cards (Credly links), plus a clear "What I'm looking for" and contact section.
 - SEO and social meta tags and JSON-LD `Person` data in `index.html`; print stylesheet hides the nav.

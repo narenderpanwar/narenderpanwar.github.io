@@ -31,15 +31,15 @@ export function Contact() {
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgb(46_229_157/0.18),transparent_60%)]" />
           <p className="relative font-mono text-sm text-ok">
             <span className="mr-3 text-white/25">05</span>
-            <span className="text-white/40">$ </span>curl -X POST /hire-me
+            <span className="text-white/40">$ </span>curl -X POST /lets-talk
           </p>
           <div className="relative mt-4 grid grid-cols-1 gap-10 md:grid-cols-[1.2fr_1fr] md:items-start">
             <div>
               <h2 className="text-3xl leading-tight font-extrabold sm:text-4xl md:text-6xl">
-                Hiring a <span className="text-gradient">DevOps Engineer?</span>
+                Your infra needs a <span className="text-gradient whitespace-nowrap">glow-up?</span> Let's talk.
               </h2>
               <p className="mt-4 max-w-lg text-white/65">
-                I reply within one business day. {showNotice ? `Notice period: ${notice}.` : ""} Happy to share references and walk through any project in detail.
+                No pressure, no recruiter-speak. Got a cursed pipeline, a cloud bill that hurts, or deployments that are way too exciting? Drop a line. I reply within one business day. {showNotice ? `Notice period: ${notice}.` : ""} Happy to walk through any project in detail.
               </p>
               <div className="mt-7 flex flex-wrap items-center gap-3">
                 <Magnetic>
