@@ -9,13 +9,22 @@ describe("VisitorCounter", () => {
   it("shows the total once the counter responds", async () => {
     respond(1234567);
     render(<VisitorCounter />);
-    expect(await screen.findByRole("status")).toHaveTextContent("12,34,567 visits and counting");
+    expect(await screen.findByRole("status")).toHaveAccessibleName("12,34,567 visits");
   });
 
   it("uses the singular for the very first visit", async () => {
     respond(1);
     render(<VisitorCounter />);
-    expect(await screen.findByRole("status")).toHaveTextContent("1 visit and counting");
+    expect(await screen.findByRole("status")).toHaveAccessibleName("1 visit");
+  });
+
+  it("floats in the bottom-right corner without blocking clicks", async () => {
+    respond(10);
+    render(<VisitorCounter />);
+    const pill = await screen.findByRole("status");
+    expect(pill).toHaveClass("fixed", "right-5", "bottom-5", "pointer-events-none");
+    expect(pill).toHaveTextContent("10");
+    expect(pill).toHaveTextContent("visits · live");
   });
 
   it("renders nothing when the counter is unreachable", async () => {

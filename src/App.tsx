@@ -12,6 +12,7 @@ import { Pipeline } from "./components/Pipeline";
 import { Projects } from "./components/Projects";
 import { ScrollProgress } from "./components/ScrollProgress";
 import { Skills } from "./components/Skills";
+import { VisitorCounter } from "./components/VisitorCounter";
 import { usePauseOffscreen } from "./hooks/usePauseOffscreen";
 
 // Show the intro once per session, and never for reduced-motion users.
@@ -39,6 +40,7 @@ export default function App() {
         <Contact />
       </main>
       <BackToTop />
+      <VisitorCounter />
     </MotionConfig>
   );
 }

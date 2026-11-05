@@ -23,7 +23,7 @@ export function BackToTop() {
           exit={{ opacity: 0, scale: 0.6, y: 20 }}
           whileHover={{ y: -3 }}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="panel fixed right-5 bottom-5 z-50 grid size-12 place-items-center rounded-xl text-ok hover:border-ok"
+          className="panel fixed right-5 bottom-[4.75rem] z-50 grid size-12 place-items-center rounded-xl text-ok hover:border-ok"
         >
           <ArrowUp size={20} />
         </motion.button>
