@@ -65,3 +65,7 @@ Pure logic is in `src/lib/helpers.ts`; `src/App.test.tsx` covers rendering, recr
 3. In the repo, go to Settings → Pages → Source and choose **GitHub Actions**.
 
 For a repo with any other name, set `base: "/<repo>/"` in `vite.config.ts`. Netlify, Vercel and Cloudflare Pages also work.
+
+## Google search (SEO)
+
+`index.html` carries the canonical URL, Open Graph tags and `Person` JSON-LD; `public/robots.txt` and `public/sitemap.xml` are served from the site root. To get indexed, verify the site in [Google Search Console](https://search.google.com/search-console) (URL-prefix property `https://narenderpanwar.github.io/`), submit `sitemap.xml`, and use URL Inspection → Request indexing. If the site URL changes, update it in those three files.
